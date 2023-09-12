@@ -13,7 +13,7 @@
   },
   "author": "MSSV_Phan_Thai_Nghi",
   "license": "ISC",
-  "type": "module",
+ 
   "dependencies": {
     "dotenv": "^16.3.1",
     "ejs": "3.1.9",
