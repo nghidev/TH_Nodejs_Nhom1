@@ -53,5 +53,15 @@ class aboutPage {
                 ]
             })
     }
+    login(req, res) {
+        return res.render("layouts/main",
+            {
+                data: {
+                    title: 'Đăng nhập',
+                    content: "admin@abc.com.vn",
+                    page: "login"
+                }
+            })
+    }
 }
 module.exports = new aboutPage();

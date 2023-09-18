@@ -21,6 +21,7 @@ const initWebRoute = (app) => {
     // AboutController
     router.get("/create-new-user", UserController.create)
     router.get("/list-user", UserController.list_user)
+    router.get("/login", UserController.login)
 
     router.get("/:slug", (req, res) => {
         res.send("không tim thấy")
