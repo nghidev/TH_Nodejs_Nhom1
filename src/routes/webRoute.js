@@ -3,23 +3,28 @@ import express from 'express'
 
 const AboutController = require('../controllers/AboutController');
 const HomeController = require('../controllers/HomeController');
+const UserController = require('../controllers/UserController');
 const router = express.Router()
 const initWebRoute = (app) => {
-    // // define the home page route
-    // router.get('/', (req, res) => {
-    //     res.send('Birds home page')
-    // })
-  
-    // // define the about route 
-    // router.get('/about', (req, res) => {
-    //     res.send('About birds')
-    // })
 
-   
+
+    router.get("/", HomeController.index)
+
+
+    // HomeController
     router.get("/home", HomeController.index)
-    router.get("/about", AboutController.index)
     router.get("/page", HomeController.page)
 
+    // AboutController
+    router.get("/about", AboutController.index)
+
+    // AboutController
+    router.get("/create-new-user", UserController.create)
+    router.get("/list-user", UserController.list_user)
+
+    router.get("/:slug", (req, res) => {
+        res.send("không tim thấy")
+    })
 
     return app.use('/', router)
 }

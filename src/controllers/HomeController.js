@@ -8,11 +8,12 @@
 // }
 class homePage {
     index(req, res) {
-        return res.render("page/home", {
+        return res.render("layouts/main", {
             data:
             {
                 title: 'Home website',
-                content: "admin@abc.com.vn"
+                content: "admin@abc.com.vn",
+                page: "home"
             }
         })
     }

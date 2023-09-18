@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Stt</th>
+      <th scope="col">Tên</th>
+      <th scope="col">Tài khoản</th>
+      <th scope="col">Email</th>
+      <th scope="col">Địa chỉ</th>
+      <th scope="col">Quyền</th>
+      <th scope="col">Cấu hình</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let i=0; i < info.length; i++) { %>
+
+      <tr>
+        <th scope="col"><%= info[i].id %></th>
+        <th scope="col"><a href=""><%= info[i].ten %></a></th>
+        <th scope="col"><%= info[i].taiKhoan %></th>
+        <th scope="col"><%= info[i].email %></th>
+        <th scope="col"><%= info[i].diaChi %></th>
+        <th scope="col"><%= info[i].quyen %></th>
+        <th scope="col">Cấu hình</th>
+      </tr>
+      <% } %>
+  </tbody>
+</table>
