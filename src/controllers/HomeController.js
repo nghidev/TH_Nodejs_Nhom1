@@ -1,12 +1,5 @@
-// import express from "express"
-// const aboutPage = (req, res) => {
-//     return res.render("home", 
-//     { data: 
-//         { title: 'About website', 
-//         content: "admin@abc.com.vn" 
-//     } })
-// }
-class homePage {
+
+class HomeController {
     index(req, res) {
         return res.render("layouts/main", {
             data:
@@ -28,4 +21,5 @@ class homePage {
     }
 
 }
-module.exports = new homePage();
+// module.exports = new homePage();
+export default new HomeController;

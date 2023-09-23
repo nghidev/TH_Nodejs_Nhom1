@@ -11,10 +11,13 @@
 
 <main>
     <div class="container mt-4">
-        <% var value = data.page %>
-        
-        
-        <%- include("../fe/" + value) %>
+        <% if (data.page) { %>
+            <% var value = data.page %>
+            <%- include("../fe/" + value) %>
+        <% } else { %>
+            <!-- Xử lý khi data không tồn tại -->
+            <p>Data không tồn tại hoặc không có trang được xác định.</p>
+        <% } %>
    </main>
 
 <footer>

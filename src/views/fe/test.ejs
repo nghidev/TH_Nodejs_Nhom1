@@ -1,0 +1,11 @@
+
+    <h1>Danh sách người dùngs</h1>
+    <ul>
+        <% data.users.forEach(user => { %>
+            <li>Tên: <%= user.ten %></li>
+            <li>Tài khoản: <%= user.tendk %></li>
+            <li>Email: <%= user.email %></li>
+
+            <hr> 
+        <% }); %>
+    </ul>

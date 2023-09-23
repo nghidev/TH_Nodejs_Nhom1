@@ -1,6 +1,7 @@
 import express from "express"
-class aboutPage {
-    create(req, res) {
+import userModel from "../models/userModel"
+
+    const create = (req, res) => {
         return res.render("layouts/main",
             {
                 data: {
@@ -10,7 +11,7 @@ class aboutPage {
                 }
             })
     }
-    list_user(req, res) {
+    const list_user = (req, res) => {
         return res.render("layouts/main",
             {
                 data: {
@@ -53,7 +54,7 @@ class aboutPage {
                 ]
             })
     }
-    login(req, res) {
+    const login = (req, res) => {
         return res.render("layouts/main",
             {
                 data: {
@@ -63,5 +64,63 @@ class aboutPage {
                 }
             })
     }
-}
-module.exports = new aboutPage();
+    // async getAllUsers(req, res) {
+    //     try {
+    //       let userList = await userModel.getAllUsers();
+    //       res.render('layouts/main', {
+    //         data: {
+    //           users: userList,
+    //           page: "test"
+    //         },
+    //       });
+    //     } 
+    //     catch (error) {
+    //       console.error('Error:', error);
+    //       res.status(500).send('Internal Server Error');
+    //     }
+    //   }
+    // const getAllUsers = async (req, res) =>{
+        
+    //       let userList = await userModel.getAllUser();
+    //       res.render('layouts/main', {
+    //         data: {
+    //           page: 'test', // Đặt giá trị cho biến 'page' trong 'data'
+    //           users: userList
+    //         }
+    //       });
+        
+    //   }
+    const getAllUsers = async (req, res) => {
+        try {
+          let userList = await userModel.getAllUser();
+          res.render('layouts/main', {
+            data: {
+              page: 'test', // Đặt giá trị cho biến 'page' trong 'data'
+              users: userList // Đặt giá trị cho biến 'users' trong 'data'
+            }
+          });
+        } catch (error) {
+          console.error('Error:', error);
+          res.status(500).send('Internal Server Error');
+        }
+      }
+      const getapi = async (req, res) => {
+        try {
+          let userList = await userModel.getAllUser();
+          res.json({
+            data: {
+              page: 'test', // Đặt giá trị cho biến 'page' trong 'data'
+              users: userList // Đặt giá trị cho biến 'users' trong 'data'
+            }
+          });
+        } catch (error) {
+          console.error('Error:', error);
+          res.status(500).send('Internal Server Error');
+        }
+      }
+      
+      
+      
+
+
+export default {getAllUsers, create, list_user, login, getapi};

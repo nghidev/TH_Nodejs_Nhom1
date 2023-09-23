@@ -1,5 +1,5 @@
 import express  from "express"
-class aboutPage{
+class AboutController{
     index (req, res){
         return res.render("layouts/main", 
         {
@@ -12,4 +12,5 @@ class aboutPage{
         })
     }
 }
-module.exports = new aboutPage();
+// module.exports = new aboutPage();
+export default new AboutController;
