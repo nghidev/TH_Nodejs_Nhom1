@@ -11,17 +11,22 @@
     </tr>
   </thead>
   <tbody>
-    <% for (let i=0; i < info.length; i++) { %>
-
+    <% data.users.forEach(user => { %>
+        
       <tr>
-        <th scope="col"><%= info[i].id %></th>
-        <th scope="col"><a href=""><%= info[i].ten %></a></th>
-        <th scope="col"><%= info[i].taiKhoan %></th>
-        <th scope="col"><%= info[i].email %></th>
-        <th scope="col"><%= info[i].diaChi %></th>
-        <th scope="col"><%= info[i].quyen %></th>
-        <th scope="col">Cấu hình</th>
+        <th scope="col"><%= user.id %></th>
+        <th scope="col"><a href="/detail-user/<%= user.id %>"><%= user.fullname %></a></th>
+        <th scope="col"><%= user.user %></th>
+        <th scope="col"><%= user.email %></th>
+        <th scope="col"><%= user.address %></th>
+        <th scope="col"><%= user.groupid %></th>
+        <th scope="col">
+          <a href="">sửa</a>
+          <a href="">xóa </a>
+        </th>
+        
+
       </tr>
-      <% } %>
+      <% }); %>
   </tbody>
 </table>

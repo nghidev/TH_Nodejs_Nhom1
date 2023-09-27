@@ -10,7 +10,12 @@
 import pool from './../configs/connectDB'
 import connection from './../configs/connectDB'
 const getAllUser = async () => {
-const [rows,fields]= await pool.execute('SELECT * FROM `taikhoan`')
+const [rows,fields]= await pool.execute('SELECT * FROM `username`')
 return rows
 }
-export default {getAllUser}
+
+const detailUser = async (id) => {
+    const [rows,fields]= await pool.execute('SELECT * FROM `username` WHERE id =? ',[id])
+    return rows
+    }
+export default {getAllUser, detailUser}

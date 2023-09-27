@@ -20,11 +20,14 @@ const initWebRoute = (app) => {
     // AboutController
     router.get("/about", AboutController.index)
 
-    // AboutController
+    // userController
     router.get("/create-new-user", UserController.create)
     router.get("/list-user", UserController.list_user)
     router.get("/login", UserController.login)
-    router.get("/getusser", UserController.getAllUsers)
+    router.get("/detail-user/:id", UserController.detailUser)
+    router.post("/insert-new-user", UserController.insertUser)
+  
+    // router.get("/getusser", UserController.getAllUsers)updateUser
 
     router.get("/:slug", (req, res) => {
         res.send("không tim thấy")
