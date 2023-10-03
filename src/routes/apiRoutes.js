@@ -10,11 +10,12 @@ const router = express.Router()
 const apiroute = (app) => {
 
     router.get("/webapi", UserController.getapi)
-   
+    
 
     router.get("/:slug", (req, res) => {
         res.send("không tim thấy")
     })
+
 
     return app.use('/api/', router)
 }

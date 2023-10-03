@@ -1,3 +1,10 @@
+<!-- Trong file EJS -->
+<% if (data.message) { %>
+  <div class="alert alert-success">
+      <%= data.message %>
+  </div>
+<% } %>
+
 <table class="table">
   <thead>
     <tr>
@@ -21,7 +28,7 @@
         <th scope="col"><%= user.address %></th>
         <th scope="col"><%= user.groupid %></th>
         <th scope="col">
-          <a href="">sửa</a>
+          <a href="/edit-user/<%= user.id %>">sửa</a>
           <a href="">xóa </a>
         </th>
         
